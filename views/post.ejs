@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/Post" enctype="multipart/form-data">
+        <div>
+          <input type="hidden" name="id" value="<%= User._id %>" >
+        </div>
+        <div>
+          <input type="text" name="title" placeholder="title">
+        </div>
+        <div>
+          <input type="text" name="Discription" placeholder="Discription"  >
+        </div>
+        <div>
+           <input type="file" name="image" placeholder="Insert Image"  >
+        </div>
+      <button type="submit">Post</button>
+    </form>
+</body>
+</html>

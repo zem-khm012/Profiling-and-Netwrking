@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .card1 {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 300px;
+  height: 300px;
+  border: solid 1px black;
+  /* margin-left: 600px; */
+  /* margin-bottom:100px; */
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <h1>welcome to profile page</h1>
+        <div class="datails"> 
+          <div class="card text-xs-center"> 
+              <br> 
+              <img src="uploads/<%= user.Img %>" style="width:200px; height: 200px;" alt="">
+              <div class="card-block"> 
+                <h4 class="card-title">User Details</h4> 
+                <p class="card-text"> 
+                    <strong>Name</strong>:<%= user.Fname %>  <%= user.Lname %><br> 
+                    <strong>Email</strong>:<%= user.Email %> <br>  
+                    <strong>About</strong>:<%= user.About %><br>  
+                    <strong>Place</strong>:<%= user.Place %> <br>  
+                    <strong>Place</strong>:<%= user.Website %> <br> 
+                    <strong>ID</strong>:<%= user._id %><br> 
+                </p> 
+                <button><a href="/Edit?id=<%= user._id %>">Edit Profile</a></button>
+                <button><a href="/Post?id=<%= user._id %>">Post</a></button>
+                <button><a href="/AddFriend?id=<%= user._id %>">Add Friends</a></button>
+                <h1>Posts</h1>
+                <% for(var i=user.post.length-1;i>=0; i--) {%>
+                  
+                  <div class="card1">
+                  <strong>Title</strong>:<%= user.post[i].title %> <br>  
+                  <strong>Discription</strong>:<%= user.post[i].Discription %><br>  
+                  <strong>image</strong>:<img src="uploads/<%= user.post[i].image %>" style="width:200px; height: 200px;" alt="">
+                  
+                </div>
+               <% } %>
+                 
+              </div> 
+          </div> 
+        </div> 
+     </div> 
+</body>
+</html>

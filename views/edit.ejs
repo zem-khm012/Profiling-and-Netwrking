@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/Edit" enctype="multipart/form-data">
+      <div>
+        <input type="hidden" name="id" value="<%= user._id %>" >
+      </div>
+      <div>
+        <input type="text" name="About" placeholder="Describe about yourself" value="<%= user.About %>" >
+      </div>
+      <div>
+        <input type="text" name="Place" placeholder="location" value="<%= user.Place %>" >
+      </div>
+      <div>
+        <input type="text" name="Website" placeholder="www.example.com" value="<%= user.Website %>" >
+      </div>
+    </div><div>
+      
+      <input type="password" name="Password"  placeholder="Password" value="<%= user.Password %>">
+    </div>
+    <input type="file" name="Img" placeholder="Insert file" value="<%= user.Img %>" >
+    <button type="submit">Edit Changes</button>
+  </form>
+</body>
+</html>
